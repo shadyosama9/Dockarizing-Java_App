@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   # DataBase Container
-  db01:
+  vprodb:
     build:
       context: ./Docker-files/db
     image: shady25/vprodb
@@ -11,16 +11,16 @@ services:
     volumes:
       - vprodbdata:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=vprodbpass
 
   # Memcache Container
-  mc01:
+  vprocache01:
     image: memcached
     ports:
       - "11211:11211"
 
   # RabbirMQ Container
-  rmq01:
+  vpromq01:
     image: rabbitmq
     ports:
       - "15672:15672"
@@ -32,7 +32,7 @@ services:
     #   - 8.8.8.8  # or any other DNS server you want to use
 
   # App Container (Tomcat)
-  app01:
+  vproapp:
     build:
       context: ./Docker-files/app
     image: shady25/vproapp
@@ -43,7 +43,7 @@ services:
       - vproappdata:/usr/local/tomcat/webapps
 
   # Nginx Container
-  web01:
+  vproweb:
     build:
       context: ./Docker-files/web
     image: shady25/vproweb
