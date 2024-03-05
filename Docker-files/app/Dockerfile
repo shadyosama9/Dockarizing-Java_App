@@ -4,10 +4,10 @@ FROM openjdk:11 AS BUILDING_IMAGE
 # Installing Services
 RUN apt update && apt install maven git -y && apt clean && rm -rf /var/lib/apt/lists/*
 # Cloning The Repo
-RUN git clone "https://github.com/Shady-10/Vprofile-Project.git"
+RUN git clone "https://github.com/shadyosama9/Dockarizing-Java_App.git"
 # Building The Artifact
-WORKDIR /Vprofile-Project
-RUN git checkout containers && mvn install
+WORKDIR /Dockarizing-Java_App
+RUN mvn install
 
 FROM tomcat:9-jre11
 
@@ -16,7 +16,7 @@ LABEL "Project"="Vprofile"
 
 # Deploying The Artifact
 RUN rm -rf /usr/local/tomcat/webapps/*
-COPY --from=BUILDING_IMAGE Vprofile-Project/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=BUILDING_IMAGE Dockarizing-Java_App/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
