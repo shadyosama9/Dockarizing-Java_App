@@ -1,6 +1,5 @@
 FROM openjdk:11 AS BUILDING_IMAGE
 
-
 # Installing Services
 RUN apt update && apt install maven git -y && apt clean && rm -rf /var/lib/apt/lists/*
 # Cloning The Repo
