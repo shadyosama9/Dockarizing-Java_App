@@ -25,8 +25,8 @@ services:
     ports:
       - "15672:15672"
     environment:
-      - RABBITMQ_DEFAULT_USER=test
-      - RABBITMQ_DEFAULT_PASS=test
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
     # dns:
     #   - "Add the local DNS"
     #   - 8.8.8.8  # or any other DNS server you want to use
