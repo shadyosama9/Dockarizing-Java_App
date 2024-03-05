@@ -59,6 +59,7 @@
             <version>${spring-data-jpa.version}</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
