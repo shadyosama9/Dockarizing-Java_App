@@ -36,9 +36,16 @@ The `docker-compose.yml` file defines the services for the project:
 - Nginx: Configuration file is located at `Docker-files/web/nginvproapp.conf`.
 - Java App: The WAR file is deployed to the root context (`/`) of Tomcat.
 
-## Author
 
-- Shady Osama
+## Technologies 
+- Spring MVC
+- Spring Security
+- Spring Data JPA
+- Maven
+- JSP
+- MySQL
+- Docker
+- Docker Compose
 
 
 
